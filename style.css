@@ -1,0 +1,350 @@
+/* === WARNA UTAMA (LIGHT MODE BERSIH) === */
+:root {
+    --bg-main: #f3f5f8;
+    --bg-card: #ffffff;
+    --bg-input: #f8fafc;
+    --text-main: #1e293b;
+    --text-sub: #64748b;
+    --border: #e2e8f0;
+    --accent: #00a884;
+    --accent-hover: #008f6f;
+    --danger: #dc2626;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.5;
+}
+
+/* === LOGIN === */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.login-box {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 35px 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.login-box h2 { text-align: center; color: var(--accent); margin-bottom: 5px; }
+.login-box p { text-align: center; color: var(--text-sub); font-size: 13px; margin-bottom: 24px; }
+
+/* === LAYOUT UTAMA === */
+.dashboard-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 240px;
+    background-color: var(--bg-card);
+    border-right: 1px solid var(--border);
+    flex-shrink: 0;
+}
+
+.sidebar-header {
+    padding: 20px;
+    font-size: 19px;
+    font-weight: 700;
+    border-bottom: 1px solid var(--border);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-section {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--text-sub);
+    padding: 16px 18px 6px;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0 12px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 10px 12px;
+    color: var(--text-main);
+    text-decoration: none;
+    border-radius: 8px;
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.nav-item:hover { background-color: var(--bg-input); color: var(--accent); }
+.nav-item.active { background-color: var(--accent); color: #ffffff; }
+
+.main-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+/* === TOPBAR === */
+.topbar {
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.search-form {
+    flex: 1;
+    min-width: 240px;
+    max-width: 450px;
+    display: flex;
+    gap: 8px;
+}
+
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.content-area {
+    padding: 24px;
+    flex: 1;
+}
+
+.page-title { margin-bottom: 20px; }
+.page-title h2 { font-size: 22px; }
+.page-title p { color: var(--text-sub); font-size: 14px; margin-top: 2px; }
+
+/* === CARD & GRID === */
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px;
+    margin-bottom: 20px;
+}
+
+.grid-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+/* GRID 3 KOLOM KESAMPING (Untuk Semua Tabel, Search, dan Kategori) */
+.grid-side-by-side {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    gap: 18px;
+    overflow-x: auto;
+    align-items: start;
+}
+
+.stat-number {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-top: 4px;
+}
+
+.grid-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.form-group { margin-bottom: 14px; }
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-sub);
+}
+
+.form-control {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background-color: var(--bg-input);
+    color: var(--text-main);
+    font-size: 14px;
+    outline: none;
+}
+
+.form-control:focus { border-color: var(--accent); background-color: #ffffff; }
+
+/* === TOMBOL === */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.btn-sm { padding: 5px 10px; font-size: 12px; }
+.btn-primary { background-color: var(--accent); color: #ffffff; }
+.btn-primary:hover { background-color: var(--accent-hover); }
+.btn-danger { background-color: var(--danger); color: #ffffff; }
+.btn-outline { background-color: var(--bg-input); border-color: var(--border); color: var(--text-main); }
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+.btn-block { width: 100%; }
+
+/* === TABS HORIZONTAL === */
+.tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 9px 16px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text-main);
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tab-btn.active {
+    background-color: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
+}
+
+/* === TABEL === */
+table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+th, td {
+    padding: 10px 9px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+    font-size: 13px;
+}
+th {
+    background-color: var(--bg-input);
+    color: var(--text-sub);
+    font-weight: 700;
+    font-size: 12px;
+}
+.text-muted { color: var(--text-sub); font-size: 12px; }
+
+.badge-id {
+    display: inline-block;
+    padding: 3px 8px;
+    background-color: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    color: #047857;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* === LIST GENRE DALAM KATEGORI === */
+.genre-list { list-style: none; margin: 12px 0 16px; }
+.genre-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 10px;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+}
+.genre-item:last-child { border-bottom: none; }
+
+/* === EXPORT BUTTONS DATATABLES === */
+.dt-buttons { margin-bottom: 12px; display: flex; gap: 6px; flex-wrap: wrap; }
+.dt-buttons .dt-button {
+    background: var(--bg-input) !important;
+    color: var(--text-main) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 6px !important;
+    padding: 6px 12px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+}
+.dt-buttons .dt-button:hover { border-color: var(--accent) !important; color: var(--accent) !important; }
+
+/* === PROFIL GAYA WHATSAPP === */
+.wa-profile-card {
+    max-width: 480px;
+    margin: 0 auto;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+.wa-avatar-section {
+    padding: 28px 20px 20px;
+    text-align: center;
+    background-color: var(--bg-input);
+    border-bottom: 1px solid var(--border);
+}
+.wa-avatar {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent);
+    margin-bottom: 10px;
+}
+.wa-list { padding: 10px 20px; }
+.wa-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--border);
+}
+.wa-item:last-child { border-bottom: none; }
+.wa-icon { width: 24px; color: var(--text-sub); font-size: 16px; padding-top: 3px; text-align: center; }
+.wa-detail { flex: 1; }
+.wa-label { font-size: 12px; color: var(--text-sub); margin-bottom: 2px; }
+.wa-value { font-size: 15px; font-weight: 500; }
+
+@media (max-width: 1024px) {
+    .grid-side-by-side { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+    .dashboard-layout { flex-direction: column; }
+    .sidebar { width: 100%; border-right: none; border-bottom: 1px solid var(--border); }
+}
